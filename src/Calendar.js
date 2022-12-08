@@ -17,7 +17,7 @@ const Calendar = () => {
         {year}년 {month}월
       </h2>
       <div>
-        <table>
+        <table className="calTable">
           <tr>
             <th>sun</th>
             <th>mon</th>
