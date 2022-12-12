@@ -13,9 +13,20 @@ h2 {
 }
 
 table {
+  border: 1px solid black;
   margin-left: auto;
   margin-right: auto;
 
   width: 99%;
   height: 100%;
+}
+
+th, tr {
+  border: 1px solid black;
+}
+
+td {
+  border: 1px solid black;
+  height: 150px;
+  vertical-align: top;
 }
