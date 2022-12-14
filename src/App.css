@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Nanum+Pen+Script&family=Yeon+Sung&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Nanum+Pen+Script&family=Yeon+Sung&display=swap");
 
 h2 {
   text-align: center;
@@ -20,7 +20,8 @@ table {
   height: 100%;
 }
 
-th, tr {
+th,
+tr {
   border: 1px solid black;
 }
 
@@ -31,9 +32,13 @@ td {
 }
 
 .beforeBtn {
-  position: left;
+  position: relative;
+  top: 20px;
+  left: 48px;
 }
 
 .afterBtn {
-  position: right;
+  position: relative;
+  top: 20px;
+  left: 480px;
 }
