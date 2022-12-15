@@ -33,12 +33,12 @@ td {
 
 .beforeBtn {
   position: relative;
-  top: 20px;
-  left: 48px;
+  top: 50px;
+  left: 40%;
 }
 
 .afterBtn {
   position: relative;
-  top: 20px;
-  left: 480px;
+  top: -47px;
+  left: 58%;
 }
