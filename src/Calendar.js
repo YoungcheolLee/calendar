@@ -33,10 +33,33 @@ const Calendar = () => {
   console.log(dummyData());
 
   // 요일별 데이터 출력 값
-  const myArr = dummyData().filter((item, idx) => {
-    return idx % 7 === 0 ? true : false;
-  });
-  console.log(myArr);
+  const myArray = [
+    {
+      myArr: dummyData().filter((item, idx) => {
+        return idx % 7 === 0 ? item : false;
+      }),
+      myArr2: dummyData().filter((item, idx) => {
+        return idx % 7 === 1 ? item : false;
+      }),
+      myArr3: dummyData().filter((item, idx) => {
+        return idx % 7 === 2 ? item : false;
+      }),
+      myArr4: dummyData().filter((item, idx) => {
+        return idx % 7 === 3 ? item : false;
+      }),
+      myArr5: dummyData().filter((item, idx) => {
+        return idx % 7 === 4 ? item : false;
+      }),
+      myArr6: dummyData().filter((item, idx) => {
+        return idx % 7 === 5 ? item : false;
+      }),
+      myArr7: dummyData().filter((item, idx) => {
+        return idx % 7 === 6 ? item : false;
+      }),
+    },
+  ];
+
+  console.log(myArray["myArr"]);
 
   return (
     <div>
@@ -65,10 +88,20 @@ const Calendar = () => {
             </tr>
           </thead>
           <tbody>
-            {myArr.map((element, idx) => (
-              <tr key={idx}>
-                <td>{element}</td>
-              </tr>
+            {myArray.map((element) => (
+              <>
+                {element.myArr.map((item, idx) => (
+                  <tr key={idx}>
+                    <td>{item}</td>
+                    <td>2</td>
+                    <td>3</td>
+                    <td>4</td>
+                    <td>5</td>
+                    <td>6</td>
+                    <td>7</td>
+                  </tr>
+                ))}
+              </>
             ))}
           </tbody>
         </table>
