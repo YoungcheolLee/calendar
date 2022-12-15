@@ -22,14 +22,21 @@ const Calendar = () => {
   // 이후 버튼 기능
   const handleAfterBtn = () => {};
 
-  // 날짜 더미 데이터
-  const dummyDay = () => {
+  //날짜 더미 데이터
+  const dummyData = () => {
     const myArray = [];
     for (let i = 1; i < 32; i++) {
       myArray.push(i);
     }
     return myArray;
   };
+  console.log(dummyData());
+
+  // 요일별 데이터 출력 값
+  const myArr = dummyData().filter((item, idx) => {
+    return idx % 7 === 0 ? true : false;
+  });
+  console.log(myArr);
 
   return (
     <div>
@@ -58,7 +65,7 @@ const Calendar = () => {
             </tr>
           </thead>
           <tbody>
-            {dummyDay().map((element, idx) => (
+            {myArr.map((element, idx) => (
               <tr key={idx}>
                 <td>{element}</td>
               </tr>
