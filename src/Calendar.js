@@ -32,34 +32,43 @@ const Calendar = () => {
   };
   console.log(dummyData());
 
-  // 요일별 데이터 출력 값
-  const myArray = [
+  const myArr = [
     {
-      myArr: dummyData().filter((item, idx) => {
-        return idx % 7 === 0 ? item : false;
-      }),
-      myArr2: dummyData().filter((item, idx) => {
-        return idx % 7 === 1 ? item : false;
-      }),
-      myArr3: dummyData().filter((item, idx) => {
-        return idx % 7 === 2 ? item : false;
-      }),
-      myArr4: dummyData().filter((item, idx) => {
-        return idx % 7 === 3 ? item : false;
-      }),
-      myArr5: dummyData().filter((item, idx) => {
-        return idx % 7 === 4 ? item : false;
-      }),
-      myArr6: dummyData().filter((item, idx) => {
-        return idx % 7 === 5 ? item : false;
-      }),
-      myArr7: dummyData().filter((item, idx) => {
-        return idx % 7 === 6 ? item : false;
-      }),
+      Sun: dummyData().slice(0, 7),
+      Mon: dummyData().slice(7, 14),
+      Thu: dummyData().slice(14, 21),
+      Wed: dummyData().slice(21, 28),
+      Thr: dummyData().slice(28, 35),
+      Fri: dummyData().slice(35, 42),
+      Sat: dummyData().slice(42, 49),
     },
   ];
 
-  console.log(myArray["myArr"]);
+  // const myArray = [
+  //   {
+  //     myArr: dummyData().filter((item, idx) => {
+  //       return idx % 7 === 0 ? item : false;
+  //     }),
+  //     myArr2: dummyData().filter((item, idx) => {
+  //       return idx % 7 === 1 ? item : false;
+  //     }),
+  //     myArr3: dummyData().filter((item, idx) => {
+  //       return idx % 7 === 2 ? item : false;
+  //     }),
+  //     myArr4: dummyData().filter((item, idx) => {
+  //       return idx % 7 === 3 ? item : false;
+  //     }),
+  //     myArr5: dummyData().filter((item, idx) => {
+  //       return idx % 7 === 4 ? item : false;
+  //     }),
+  //     myArr6: dummyData().filter((item, idx) => {
+  //       return idx % 7 === 5 ? item : false;
+  //     }),
+  //     myArr7: dummyData().filter((item, idx) => {
+  //       return idx % 7 === 6 ? item : false;
+  //     }),
+  //   },
+  // ];
 
   return (
     <div>
@@ -88,20 +97,16 @@ const Calendar = () => {
             </tr>
           </thead>
           <tbody>
-            {myArray.map((element) => (
-              <>
-                {element.myArr.map((item, idx) => (
-                  <tr key={idx}>
-                    <td>{item}</td>
-                    <td>2</td>
-                    <td>3</td>
-                    <td>4</td>
-                    <td>5</td>
-                    <td>6</td>
-                    <td>7</td>
-                  </tr>
-                ))}
-              </>
+            {myArr.map((element, idx) => (
+              <tr key={idx}>
+                <td>{element.Sun}</td>
+                <td>{element.Mon}</td>
+                <td>{element.Thu}</td>
+                <td>{element.Wed}</td>
+                <td>{element.Thr}</td>
+                <td>{element.Fri}</td>
+                <td>{element.Sat}</td>
+              </tr>
             ))}
           </tbody>
         </table>
