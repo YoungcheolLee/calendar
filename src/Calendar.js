@@ -104,8 +104,6 @@ const Calendar = () => {
                 <td>{element.Thu}</td>
                 <td>{element.Wed}</td>
                 <td>{element.Thr}</td>
-                <td>{element.Fri}</td>
-                <td>{element.Sat}</td>
               </tr>
             ))}
           </tbody>
