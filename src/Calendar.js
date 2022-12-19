@@ -10,7 +10,7 @@ const date = new Date();
 const year = date.getFullYear();
 const month = date.getMonth() + 1;
 const day = date.getDate();
-console.log(`today=${day}일`);
+const daysInMonth = 30;
 
 const Calendar = () => {
   // 날짜 데이터 관리용 state
@@ -23,43 +23,29 @@ const Calendar = () => {
   const handleAfterBtn = () => {};
 
   //날짜 더미 데이터
-  const dummyData = () => {
-    const myArray = [];
-    for (let i = 1; i < 32; i++) {
-      myArray.push(i);
+
+  const getMonthArray = () => {
+    const result = [];
+
+    const numberOfRows = Math.ceil(daysInMonth / 7);
+    //
+    for (let i = 0; i < numberOfRows; i++) {
+      const dayArray = [];
+      for (let y = 1; y < 8; y++) {
+        dayArray.push(y + i * 7);
+      }
+      result.push(
+        <tr>
+          {dayArray.map((item) => (
+            <td>{item}</td>
+          ))}
+        </tr>
+      );
     }
-    return myArray;
+    return result;
   };
-  console.log(dummyData());
 
   // 요일별 데이터 출력 값
-  const myArray = [
-    {
-      myArr: dummyData().filter((item, idx) => {
-        return idx % 7 === 0 ? item : false;
-      }),
-      myArr2: dummyData().filter((item, idx) => {
-        return idx % 7 === 1 ? item : false;
-      }),
-      myArr3: dummyData().filter((item, idx) => {
-        return idx % 7 === 2 ? item : false;
-      }),
-      myArr4: dummyData().filter((item, idx) => {
-        return idx % 7 === 3 ? item : false;
-      }),
-      myArr5: dummyData().filter((item, idx) => {
-        return idx % 7 === 4 ? item : false;
-      }),
-      myArr6: dummyData().filter((item, idx) => {
-        return idx % 7 === 5 ? item : false;
-      }),
-      myArr7: dummyData().filter((item, idx) => {
-        return idx % 7 === 6 ? item : false;
-      }),
-    },
-  ];
-
-  console.log(myArray["myArr"]);
 
   return (
     <div>
@@ -87,23 +73,7 @@ const Calendar = () => {
               <th>Saturday</th>
             </tr>
           </thead>
-          <tbody>
-            {myArray.map((element) => (
-              <>
-                {element.myArr.map((item, idx) => (
-                  <tr key={idx}>
-                    <td>{item}</td>
-                    <td>2</td>
-                    <td>3</td>
-                    <td>4</td>
-                    <td>5</td>
-                    <td>6</td>
-                    <td>7</td>
-                  </tr>
-                ))}
-              </>
-            ))}
-          </tbody>
+          <tbody>{getMonthArray()}</tbody>
         </table>
       </div>
     </div>
