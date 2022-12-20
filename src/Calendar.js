@@ -28,7 +28,7 @@ const Calendar = () => {
     const result = [];
 
     const numberOfRows = Math.ceil(daysInMonth / 7);
-    //
+    console.log(`numberOfRows = ${numberOfRows}`);
     for (let i = 0; i < numberOfRows; i++) {
       const dayArray = [];
       for (let y = 1; y < 8; y++) {
