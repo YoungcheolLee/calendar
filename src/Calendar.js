@@ -1,4 +1,4 @@
-import { useState } from "react";
+//import { useState } from "react";
 
 /**
  * Calendar.js 설명
@@ -6,15 +6,19 @@ import { useState } from "react";
  *  - 달력 네비게이션 기능 및 선택한 시간에 해당하는 날짜 출력
  */
 
-const date = new Date();
-const year = date.getFullYear();
-const month = date.getMonth() + 1;
-const day = date.getDate();
-const daysInMonth = 30;
-
 const Calendar = () => {
+  console.log("start");
+  const year = new Date().getFullYear();
+  const month = new Date().getMonth() + 1;
+  const day = new Date().getDate();
+  const daysInMonth = 30;
+
+  //이번달 마지막 날짜
+  const lastDay = new Date(2022, 12, 0);
+  console.log(lastDay);
+
   // 날짜 데이터 관리용 state
-  const [calDate, setCalDate] = useState("");
+  //const [calDate, setCalDate] = useState("");
 
   // 이전 버튼 기능
   const handleBoforeBtn = () => {};
@@ -23,7 +27,6 @@ const Calendar = () => {
   const handleAfterBtn = () => {};
 
   //날짜 더미 데이터
-
   const getMonthArray = () => {
     const result = [];
 
