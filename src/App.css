@@ -20,11 +20,11 @@ table {
 }
 
 tr {
-  border: 1px solid red;
+  border: 1px solid blue;
 }
 
 th {
-  border: 1px solid green;
+  border: 1px solid black;
 }
 
 td {
